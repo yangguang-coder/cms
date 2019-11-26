@@ -1,5 +1,7 @@
 package com.briup.cms.bean;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,6 +10,7 @@ import java.io.Serializable;
 public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(name = "链接id")
     private  int id;
 
     public int getId() {
@@ -33,7 +36,8 @@ public class Category implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
+     @ApiModelProperty(name = "链接code",required = true)
     private  long code;
+    @ApiModelProperty(name = "链接名字",required = true)
     private  String name;
 }

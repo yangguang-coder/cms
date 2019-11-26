@@ -41,4 +41,6 @@ public class Link implements Serializable {
     private  String name;
     @ApiModelProperty(value = "链接地址",required = true)
     private  String url;
+
+
 }

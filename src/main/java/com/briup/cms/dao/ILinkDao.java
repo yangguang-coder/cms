@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ILinkDao extends JpaRepository<Link,Integer> {
+    Link queryByid(int id);
 }
