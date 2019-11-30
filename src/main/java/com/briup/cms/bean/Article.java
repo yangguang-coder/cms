@@ -1,5 +1,7 @@
 package com.briup.cms.bean;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 
 import java.io.Serializable;
@@ -10,12 +12,29 @@ import java.util.Date;
 public class Article implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(value = "信息id")
     private  int id;
+    @ApiModelProperty(value = "信息作者",required = true)
     private  String author;
+    @ApiModelProperty(value = "点击次数",hidden = true)
     private int clickTimes;
+    @ApiModelProperty(value = "发布内容",required = true)
     private  String content;
+    @ApiModelProperty(value = "发布时间",hidden = true)
     private Date publishDate;
+    @ApiModelProperty(value = "信息标题",required= true)
     private String title;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private  Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public int getId() {
         return id;

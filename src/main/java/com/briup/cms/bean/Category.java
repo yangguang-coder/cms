@@ -36,8 +36,13 @@ public class Category implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-     @ApiModelProperty(name = "链接code",required = true)
+     @ApiModelProperty(name = "链接code")
     private  long code;
-    @ApiModelProperty(name = "链接名字",required = true)
+    @ApiModelProperty(name = "链接名字")
     private  String name;
+
+
+
+
+
 }
